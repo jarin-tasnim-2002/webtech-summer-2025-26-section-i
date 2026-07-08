@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Payable Calculator</title>
+
+    <style>
+
+        body{
+            margin:0;
+            padding:0;
+            font-family:Arial, sans-serif;
+        }
+
+        .box{
+            width:350px;
+            height:420px;
+            background:gray;
+            margin:70px auto;
+            padding-top:60px;
+        }
+
+        table{
+            margin:auto;
+        }
+
+        td{
+            padding:15px 10px;
+            font-size:20px;
+        }
+
+        input[type="text"]{
+            width:160px;
+            height:30px;
+            font-size:16px;
+        }
+
+        input[type="button"]{
+            width:160px;
+            height:35px;
+            font-size:16px;
+            cursor:pointer;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="box">
+
+        <table>
+
+            <tr>
+                <td><b>Unit Price</b></td>
+                <td><input type="text" id="price"></td>
+            </tr>
+
+            <tr>
+                <td>Quantity</td>
+                <td><input type="text" id="quantity"></td>
+            </tr>
+
+            <tr>
+                <td>Payable</td>
+                <td><input type="text" id="payable" readonly></td>
+            </tr>
+
+            <tr>
+                <td colspan="2" align="center">
+                    <br>
+                    <input type="button" value="Calculate" onclick="calculate()">
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <script>
+
+        function calculate()
+        {
+            var price = document.getElementById("price").value;
+            var quantity = document.getElementById("quantity").value;
+
+            if(price == "" || quantity == "")
+            {
+                alert("Please enter Unit Price and Quantity.");
+                return;
+            }
+
+            var payable = parseFloat(price) * parseFloat(quantity);
+
+            document.getElementById("payable").value = payable;
+        }
+
+    </script>
+
+</body>
+
+</html>

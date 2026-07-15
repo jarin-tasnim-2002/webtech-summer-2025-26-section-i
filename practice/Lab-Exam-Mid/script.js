@@ -28,25 +28,27 @@ function validation() {
 
         document.getElementById("idErr").innerHTML = "Required";
         valid = false;
+    }
 
     
     else if (studentid.indexOf("-") == -1) {
 
         document.getElementById("idErr").innerHTML = "ID must contain -";
-        valid = false;}
-
+        valid = false;
     }
+
+    
 
     if (!email) {
         document.getElementById("emailErr").innerHTML = "Required";
         valid = false;
+    }
 
     
     else if (email.indexOf("@student.aiub.edu") == -1) {
 
         document.getElementById("emailErr").innerHTML = "Invalid Email";
-        valid = false;}
-
+        valid = false;
     }
 
     if (credit == "") {
